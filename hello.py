@@ -3,11 +3,13 @@ print("Hello, welcome to my converter!")
 def romanNum(x):
     print("Roman!")
 
-    roman = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"] #list of roman numerals
+    #roman = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"] #list of roman numerals
     arabic = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000] #arabic value of roman numeral
     i = 12 #number of values in the above arrays
 
-    return 2
+    div = x // arabic[i]
+
+    return div
 
 def main():
     arab = int(input("Please enter an arabic number: ")) #accept user input of an arabic number
