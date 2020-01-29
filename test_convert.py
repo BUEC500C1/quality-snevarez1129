@@ -1,27 +1,28 @@
 def romanNum(x):
-    #print("Roman!")
 
-    roma = ""
+    roma = "" #string to be returned
     roman = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"] #list of roman numerals
     arabic = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000] #arabic value of roman numeral
     i = 12 #number of values in the above arrays
 
-    while x > 0: #while the number is greater than 0
-        div = x // arabic[i] #find the quotient
-        #print(div)
-        x %= arabic[i] #get the remainder
-        #print(x)
+    if x > 3999 or x < 0:
+        roma = "Unavailable"
+    else:
+        while x > 0: #while the number is greater than 0
+            div = x // arabic[i] #find the quotient
+            x %= arabic[i] #get the remainder
 
-        while div > 0: #while the quotient is greater than 0
-            roma = roma + roman[i]
-            #print(roman[i], end = "") #print roman numeral digit
-            div -= 1 #decrement the quotient
+            while div > 0: #while the quotient is greater than 0
+                roma = roma + roman[i]
+                div -= 1 #decrement the quotient
 
-        i -= 1 #move to the next roman numeral digit
+            i -= 1 #move to the next roman numeral digit
 
     return roma
 
 def test_conversion():
+    assert romanNum(-7) == "Unavailable"
+    assert romanNum(0) == ""
     assert romanNum(3) == "III"
     assert romanNum(12) == "XII"
     assert romanNum(27) == "XXVII"
@@ -44,3 +45,4 @@ def test_conversion():
     assert romanNum(1054) == "MLIV"
     assert romanNum(2309) == "MMCCCIX"
     assert romanNum(3459) == "MMMCDLIX"
+    assert romanNum(6278) == "Unavailable" 
