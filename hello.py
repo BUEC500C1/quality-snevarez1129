@@ -8,7 +8,7 @@ def romanNum(x):
     i = 12 #number of values in the above arrays
 
     if x > 3999 or x < 1:
-        roma = "Unavailable"
+        roma = "Unavailable" #converter can only handle numbers between 1 and 3999
     else:
         while x > 0: #while the number is greater than 0
             div = x // arabic[i] #find the quotient
@@ -25,9 +25,7 @@ def romanNum(x):
 def main():
 
     cont = 'y'
-
     while cont == 'y':
-
         arab = int(input("To begin, please enter an arabic number: ")) #accept user input of an arabic number
         numeral = romanNum(arab) #call conversion function
         if numeral == "Unavailable":
