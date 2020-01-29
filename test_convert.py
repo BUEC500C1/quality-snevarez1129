@@ -5,7 +5,7 @@ def romanNum(x):
     arabic = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000] #arabic value of roman numeral
     i = 12 #number of values in the above arrays
 
-    if x > 3999 or x < 0:
+    if x > 3999 or x < 1:
         roma = "Unavailable"
     else:
         while x > 0: #while the number is greater than 0
@@ -22,7 +22,7 @@ def romanNum(x):
 
 def test_conversion():
     assert romanNum(-7) == "Unavailable"
-    assert romanNum(0) == ""
+    assert romanNum(0) == "Unavailable"
     assert romanNum(3) == "III"
     assert romanNum(12) == "XII"
     assert romanNum(27) == "XXVII"

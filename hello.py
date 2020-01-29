@@ -7,7 +7,7 @@ def romanNum(x):
     arabic = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000] #arabic value of roman numeral
     i = 12 #number of values in the above arrays
 
-    if x > 3999 or x < 0:
+    if x > 3999 or x < 1:
         roma = "Unavailable"
     else:
         while x > 0: #while the number is greater than 0
@@ -31,7 +31,7 @@ def main():
         arab = int(input("To begin, please enter an arabic number: ")) #accept user input of an arabic number
         numeral = romanNum(arab) #call conversion function
         if numeral == "Unavailable":
-            print("This converter can only handle arabic numbers between 0 and 3999. Please enter a different number.")
+            print("This converter can only handle arabic numbers between 1 and 3999. Please enter a different number.")
         else:
             print("The Roman Numeral for", arab, "is:", numeral)
         cont = input("nWould you like to enter a new number? [y/n]: ")
