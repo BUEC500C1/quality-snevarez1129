@@ -26,7 +26,23 @@ def main():
 
     cont = 'y'
     while cont == 'y':
-        arab = int(input("To begin, please enter an arabic number: ")) #accept user input of an arabic number
+        arab = input("To begin, please enter an arabic number: ") #accept user input of an arabic number
+
+        try:
+            int(arab)
+        except ValueError:
+           print("That's not an int!")
+           usr_type = "string"
+           while usr_type != "int":
+               arab = input("Please enter an arabic number: ")
+               try:
+                   int(arab)
+                   usr_type = "int"
+               except ValueError:
+                   print("No...")
+
+
+        arab = int(arab)
         numeral = romanNum(arab) #call conversion function
         if numeral == "Unavailable":
             print("This converter can only handle arabic numbers between 1 and 3999. Please enter a different number.")

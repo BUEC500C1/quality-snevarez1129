@@ -46,6 +46,6 @@ def test_conversion():
     assert romanNum(2309) == "MMCCCIX"
     assert romanNum(3459) == "MMMCDLIX"
     assert romanNum(6278) == "Unavailable"
-    #assert romanNum('i') == "Unavailable"
+    #assert romanNum('i') == "Unavailable" => Verifying user enters an int happens in main function
     #assert romanNum("hello") == "Unavailable"
-    assert romanNum(59.44444) == "Unavailable"
+    #assert romanNum(59.44444) == "Unavailable"
