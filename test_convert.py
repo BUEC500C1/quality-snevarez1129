@@ -45,4 +45,6 @@ def test_conversion():
     assert romanNum(1054) == "MLIV"
     assert romanNum(2309) == "MMCCCIX"
     assert romanNum(3459) == "MMMCDLIX"
-    assert romanNum(6278) == "Unavailable" 
+    assert romanNum(6278) == "Unavailable"
+    assert romanNum('i') == "Unavailable"
+    assert romanNum("hello") == "Unavailable"
